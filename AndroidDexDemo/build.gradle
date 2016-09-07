@@ -1,0 +1,19 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    //Maven库部署在公司内部的Devnet开发机器上, 貌似说是从Maven官方同步过来的的, 可能这样速度会快点
+    def internalMavenUrl = "http://maven.oa.com/nexus/content/groups/androidbuild/"
+    repositories {
+        maven {
+            url internalMavenUrl
+        }
+//        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
