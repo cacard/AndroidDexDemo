@@ -22,8 +22,8 @@ Dynamic Load Class via DexClassLoader and PathClassLoader
 
 ## DexClassLoader的parent问题
 new DexClassLoader()时，指定DexClassLoader的parent是哪个？
-一、App的PathClassLoader
-二、BootClassLoader
+App的PathClassLoader还是BootClassLoader？
+
 二者都能加载成功，但有所区别，做了个小实验：
 第一种情况的加载过程应该是：
 DexClassLoader加载，委托给PathClassLoader，再委托给BootClassLoader，均没加载成功，最后由DexClassLoader本身加载；
